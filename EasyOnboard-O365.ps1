@@ -3,15 +3,15 @@
 
 # Tested on Powershell v3 and Server 2008R2
 
-# This script can be used to quickly create user and assign them to the appropriate
-# group, but it was designed with Office 365 in mind. This forces the user to enter
-# all information required for DirSync to successfully add to user without generating
-# an '.onmicrosoft.com' alias for the user, and to minimize the amount of work needed
-# when creating a new user in a multiple-domain environment.
+# This script can be used to quickly create users and assign them to the appropriate
+# group, but it was designed with Office 365 in mind. This script forces the onboarder
+# to enter all the information required for DirSync to successfully add the new user, 
+# without generating an '.onmicrosoft.com' alias or causing other headaches. This script
+# was writtin with functionality in mind for a multi-domain environment.
 
-# Before running, do the following:
-# 1. Customize the $OUHier to match your AD structure. This is the PARENT folder that your department OUs are in. $OUDefault is the default child folder within $Ouhier
-# 2. Customize the Department names and amount. Modify the menu that prompts the user and the amount of if(choice -eq #) loops appropriately
+# Before running in your environment, please do the following:
+# 1. Customize $OUHier to match your AD structure. This is the PARENT folder that your department OUs are in. $OUDefault is the default child folder within $Ouhier
+# 2. Customize the Department names and quantity. Modify the menu that prompts the user and the amount of if(choice -eq #) loops appropriately
 
 $OUhier = #"OU=Location Users,OU=Office,dc=Company,dc=tld"
 $OUdefault = #"OU=Unassigned Users"
